@@ -187,6 +187,32 @@ class TurnTimerView(discord.ui.View):
         )
 
 
+def build_lobby_embed(game: RoundGame) -> discord.Embed:
+    embed = discord.Embed(
+        title=f"🎮 {catalog.label(game.anime)}",
+        description=(
+            "Chacun cite un personnage différent à son tour. Un doublon, un nom inconnu "
+            "ou un délai dépassé retire une vie. Le dernier survivant gagne."
+        ),
+        color=discord.Color.blurple(),
+    )
+    embed.add_field(name="Hôte", value=f"<@{game.host_id}>")
+    embed.add_field(name="Vies", value=str(game.starting_lives))
+    embed.add_field(name="Chrono", value=f"{game.seconds} s")
+    embed.add_field(name="Récompense", value=f"{WIN_REWARD} pièces")
+    embed.add_field(name="Catalogue", value=f"{catalog.count(game.anime)} personnages")
+    player_list = "\n".join(
+        f"• <@{player.user_id}>" + (" — hôte" if player.user_id == game.host_id else "")
+        for player in game.players
+    )
+    embed.add_field(
+        name=f"Joueurs inscrits ({len(game.players)})",
+        value=player_list or "Aucun joueur",
+        inline=False,
+    )
+    return embed
+
+
 class LobbyView(discord.ui.View):
     def __init__(self, manager: GameManager, channel_id: int):
         super().__init__(timeout=600)
@@ -203,7 +229,8 @@ class LobbyView(discord.ui.View):
             await interaction.response.send_message("Cette salle d’attente est fermée.", ephemeral=True)
             return
         if game.add_player(interaction.user.id, interaction.user.display_name):
-            await interaction.response.send_message("Tu as rejoint la partie.", ephemeral=True)
+            await interaction.response.edit_message(embed=build_lobby_embed(game), view=self)
+            await interaction.followup.send("Tu as rejoint la partie.", ephemeral=True)
         else:
             await interaction.response.send_message("Tu es déjà dans la partie.", ephemeral=True)
 
@@ -216,7 +243,8 @@ class LobbyView(discord.ui.View):
         if interaction.user.id == game.host_id:
             await interaction.response.send_message("L’hôte ne peut pas quitter; utilise Annuler.", ephemeral=True)
         elif game.remove_player(interaction.user.id):
-            await interaction.response.send_message("Tu as quitté la partie.", ephemeral=True)
+            await interaction.response.edit_message(embed=build_lobby_embed(game), view=self)
+            await interaction.followup.send("Tu as quitté la partie.", ephemeral=True)
         else:
             await interaction.response.send_message("Tu n’étais pas inscrit.", ephemeral=True)
 
@@ -322,20 +350,10 @@ async def anime_create(
     game = RoundGame(interaction.user.id, anime, vies, chrono)
     game.add_player(interaction.user.id, interaction.user.display_name)
     bot.games.create(interaction.channel_id, game)
-    embed = discord.Embed(
-        title=f"🎮 {catalog.label(anime)}",
-        description=(
-            "Chacun cite un personnage différent à son tour. Un doublon, un nom inconnu "
-            "ou un délai dépassé retire une vie. Le dernier survivant gagne."
-        ),
-        color=discord.Color.blurple(),
+    await interaction.response.send_message(
+        embed=build_lobby_embed(game),
+        view=LobbyView(bot.games, interaction.channel_id),
     )
-    embed.add_field(name="Hôte", value=interaction.user.mention)
-    embed.add_field(name="Vies", value=str(vies))
-    embed.add_field(name="Chrono", value=f"{chrono} s")
-    embed.add_field(name="Récompense", value=f"{WIN_REWARD} pièces")
-    embed.add_field(name="Catalogue", value=f"{catalog.count(anime)} personnages")
-    await interaction.response.send_message(embed=embed, view=LobbyView(bot.games, interaction.channel_id))
 
 
 @bot.tree.command(name="anime_statut", description="Affiche l’état de la partie de ce salon")
