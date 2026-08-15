@@ -208,5 +208,40 @@
       "Van Hohenheim": ["Hohenheim", "Hohenheim de la lumière"],
       "Scar": ["Scar", "Balafré", "Tueur d alchimistes d État"]
     }
+  },
+  "jojo": {
+    "label": "JoJo's Bizarre Adventure",
+    "anime_ids": [14719, 20899, 26055, 31933, 37991, 48661, 51367, 53273],
+    "manual_aliases": {
+      "Jonathan Joestar": ["Jonathan", "JoJo", "Premier JoJo"],
+      "Joseph Joestar": ["Joseph", "JoJo", "Vieux Joseph", "Old Joseph"],
+      "Joutarou Kuujou": ["Jotaro Kujo", "Jotaro", "Joutarou", "JoJo", "Star Platinum"],
+      "Jousuke Higashikata": ["Josuke Higashikata", "Josuke", "JoJo", "Crazy Diamond"],
+      "Giorno Giovanna": ["Giorno", "GioGio", "Golden Experience", "Gold Experience"],
+      "Jolyne Kuujou": ["Jolyne Cujoh", "Jolyne", "JoJo", "Stone Free"],
+      "Dio Brando": ["Dio", "DIO", "Le Monde", "The World"],
+      "Robert E. O. Speedwagon": ["Speedwagon", "Robert Speedwagon"],
+      "Caesar Anthonio Zeppeli": ["Caesar Zeppeli", "César Zeppeli", "Caesar"],
+      "Lisa Lisa": ["Elizabeth Joestar", "Lisa Lisa"],
+      "Jean Pierre Polnareff": ["Polnareff", "Jean-Pierre Polnareff", "Silver Chariot"],
+      "Muhammad Avdol": ["Avdol", "Abdul", "Magician's Red"],
+      "Noriaki Kakyoin": ["Kakyoin", "Hierophant Green"],
+      "Iggy": ["Iggy", "The Fool"],
+      "Kira Yoshikage": ["Yoshikage Kira", "Kira", "Killer Queen"],
+      "Kouichi Hirose": ["Koichi Hirose", "Koichi", "Echoes"],
+      "Okuyasu Nijimura": ["Okuyasu", "The Hand"],
+      "Rohan Kishibe": ["Rohan", "Heaven's Door"],
+      "Bruno Bucciarati": ["Bucciarati", "Bruno", "Sticky Fingers", "Zipper Man"],
+      "Guido Mista": ["Mista", "Sex Pistols", "Six Bullets"],
+      "Narancia Ghirga": ["Narancia", "Aerosmith", "Lil Bomber"],
+      "Leone Abbacchio": ["Abbacchio", "Moody Blues", "Moody Jazz"],
+      "Pannacotta Fugo": ["Fugo", "Purple Haze", "Purple Smoke"],
+      "Trish Una": ["Trish", "Spice Girl"],
+      "Diavolo": ["Diavolo", "Boss", "King Crimson"],
+      "Enrico Pucci": ["Pucci", "Père Pucci", "Father Pucci", "Whitesnake", "Made in Heaven"],
+      "Ermes Costello": ["Ermes", "Hermès", "Kiss", "Smack"],
+      "Foo Fighters": ["F.F.", "FF", "Foo Fighters"],
+      "Weather Report": ["Weather", "Wes Bluemarine", "Weather Report"]
+    }
   }
 }

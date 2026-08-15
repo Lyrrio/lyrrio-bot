@@ -6,3 +6,7 @@ data/catalog.json.tmp
 data/economy.db
 data/economy.db-shm
 data/economy.db-wal
+data/catalog_edits.json
+data/catalog_edits.json.tmp
+data/undercover_edits.json
+data/undercover_edits.json.tmp

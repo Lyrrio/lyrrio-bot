@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import hashlib
 import html
 import json
@@ -225,13 +226,32 @@ def build_anime(slug: str, config: dict) -> dict:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Met à jour le catalogue des personnages.")
+    parser.add_argument(
+        "--anime",
+        action="append",
+        dest="selected_anime",
+        help="Identifiant d'un anime à reconstruire (répétable). Par défaut : tous.",
+    )
+    args = parser.parse_args()
     config = json.loads((ROOT / "anime_config.json").read_text(encoding="utf-8"))
+    selected = set(args.selected_anime or config)
+    unknown = selected - set(config)
+    if unknown:
+        raise SystemExit(f"Anime inconnu : {', '.join(sorted(unknown))}")
+    output = ROOT / "data" / "catalog.json"
+    existing_anime: dict[str, dict] = {}
+    if args.selected_anime and output.exists():
+        existing_anime = json.loads(output.read_text(encoding="utf-8")).get("anime", {})
+    rebuilt = dict(existing_anime)
+    for slug, item in config.items():
+        if slug in selected:
+            rebuilt[slug] = build_anime(slug, item)
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source": f"MyAnimeList character pages; fallback: Hugging Face {DATASET} (CC BY 4.0)",
-        "anime": {slug: build_anime(slug, item) for slug, item in config.items()},
+        "anime": rebuilt,
     }
-    output = ROOT / "data" / "catalog.json"
     output.parent.mkdir(exist_ok=True)
     temporary = output.with_suffix(".json.tmp")
     temporary.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
