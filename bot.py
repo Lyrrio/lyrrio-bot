@@ -556,8 +556,16 @@ class AnimeBot(discord.Client):
         if test_guild:
             guild = discord.Object(id=int(test_guild))
             self.tree.copy_global_to(guild=guild)
-            synced = await self.tree.sync(guild=guild)
-            logging.info("%s commande(s) synchronisée(s) sur le serveur de test.", len(synced))
+            guild_synced = await self.tree.sync(guild=guild)
+            logging.info(
+                "%s commande(s) synchronisées immédiatement sur le serveur de test.",
+                len(guild_synced),
+            )
+            global_synced = await self.tree.sync()
+            logging.info(
+                "%s commande(s) globales publiées pour les autres serveurs.",
+                len(global_synced),
+            )
         else:
             synced = await self.tree.sync()
             logging.info("%s commande(s) globale(s) synchronisée(s).", len(synced))
