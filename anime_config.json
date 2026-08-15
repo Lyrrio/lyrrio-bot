@@ -1,0 +1,133 @@
+{
+  "one-piece": {
+    "label": "One Piece",
+    "anime_ids": [21, 459, 460, 461, 464, 466, 504, 5252, 12859, 19123, 25161, 31490, 38234, 41592],
+    "manual_aliases": {
+      "Monkey D., Luffy": ["Luffy", "Monkey D Luffy"],
+      "Roronoa, Zoro": ["Zoro"],
+      "Vinsmoke, Sanji": ["Sanji"],
+      "Nico, Robin": ["Robin"],
+      "Tony Tony, Chopper": ["Chopper"],
+      "Portgas D., Ace": ["Ace"],
+      "Trafalgar D. Water, Law": ["Law", "Trafalgar Law"]
+    }
+  },
+  "naruto": {
+    "label": "Naruto",
+    "anime_ids": [20, 1735, 28755, 34566],
+    "manual_aliases": {
+      "Uzumaki, Naruto": ["Naruto"],
+      "Uchiha, Sasuke": ["Sasuke"],
+      "Haruno, Sakura": ["Sakura"],
+      "Hatake, Kakashi": ["Kakashi"],
+      "Uchiha, Itachi": ["Itachi"],
+      "Gaara": ["Gaara du désert"]
+    }
+  },
+  "mushoku-tensei": {
+    "label": "Mushoku Tensei",
+    "dataset_queries": ["Mushoku Tensei"],
+    "anime_ids": [39535, 45576, 51179, 55888],
+    "manual_aliases": {
+      "Greyrat, Rudeus": ["Rudeus", "Rudy"],
+      "Greyrat, Eris Boreas": ["Eris"],
+      "Migurdia, Roxy": ["Roxy"],
+      "Sylphiette": ["Sylphy", "Fitz"]
+    }
+  },
+  "my-hero-academia": {
+    "label": "My Hero Academia",
+    "dataset_queries": ["My Hero Academia"],
+    "anime_ids": [31964, 33486, 36456, 38408, 41587, 49918, 54789],
+    "manual_aliases": {
+      "Midoriya, Izuku": ["Deku", "Izuku", "Midoriya"],
+      "Bakugou, Katsuki": ["Bakugo", "Katsuki", "Kacchan"],
+      "Todoroki, Shouto": ["Shoto", "Todoroki"],
+      "Yagi, Toshinori": ["All Might"],
+      "Shigaraki, Tomura": ["Tomura", "Shigaraki"]
+    }
+  },
+  "demon-slayer": {
+    "label": "Demon Slayer",
+    "dataset_queries": ["Demon Slayer"],
+    "anime_ids": [38000, 40456, 47778, 51019, 55701],
+    "manual_aliases": {
+      "Kamado, Tanjirou": ["Tanjiro", "Tanjirou"],
+      "Kamado, Nezuko": ["Nezuko"],
+      "Agatsuma, Zenitsu": ["Zenitsu"],
+      "Hashibira, Inosuke": ["Inosuke"]
+    }
+  },
+  "jujutsu-kaisen": {
+    "label": "Jujutsu Kaisen",
+    "dataset_queries": ["Jujutsu Kaisen"],
+    "anime_ids": [40748, 48561, 51009],
+    "manual_aliases": {
+      "Itadori, Yuuji": ["Yuji", "Yuuji", "Itadori"],
+      "Gojou, Satoru": ["Gojo", "Satoru"],
+      "Fushiguro, Megumi": ["Megumi"],
+      "Kugisaki, Nobara": ["Nobara"],
+      "Ryomen Sukuna": ["Sukuna"]
+    }
+  },
+  "attack-on-titan": {
+    "label": "L'Attaque des Titans",
+    "anime_ids": [16498, 25777, 35760, 38524, 40028, 48583, 51535],
+    "manual_aliases": {
+      "Yeager, Eren": ["Eren", "Eren Jaeger", "Eren Jäger"],
+      "Ackerman, Mikasa": ["Mikasa"],
+      "Arlert, Armin": ["Armin"],
+      "Levi": ["Livai", "Livaï", "Levi Ackerman"]
+    }
+  },
+  "dragon-ball": {
+    "label": "Dragon Ball",
+    "anime_ids": [223, 813, 225, 30694, 48916],
+    "manual_aliases": {
+      "Son, Gokuu": ["Goku", "Son Goku"],
+      "Vegeta": ["Vegeta"],
+      "Piccolo": ["Piccolo"],
+      "Son, Gohan": ["Gohan"]
+    }
+  },
+  "bleach": {
+    "label": "Bleach",
+    "anime_ids": [269, 41467, 53998],
+    "manual_aliases": {
+      "Kurosaki, Ichigo": ["Ichigo"],
+      "Kuchiki, Rukia": ["Rukia"],
+      "Abarai, Renji": ["Renji"],
+      "Inoue, Orihime": ["Orihime"]
+    }
+  },
+  "hunter-x-hunter": {
+    "label": "Hunter x Hunter",
+    "anime_ids": [11061],
+    "manual_aliases": {
+      "Freecss, Gon": ["Gon"],
+      "Zoldyck, Killua": ["Killua"],
+      "Kurapika": ["Kurapika"],
+      "Leorio Paladiknight": ["Leorio"],
+      "Hisoka Morow": ["Hisoka"]
+    }
+  },
+  "death-note": {
+    "label": "Death Note",
+    "anime_ids": [1535],
+    "manual_aliases": {
+      "Yagami, Light": ["Light", "Kira"],
+      "L Lawliet": ["L", "Ryuzaki"],
+      "Amane, Misa": ["Misa"],
+      "Ryuk": ["Ryuk"]
+    }
+  },
+  "fullmetal-alchemist": {
+    "label": "Fullmetal Alchemist",
+    "anime_ids": [121, 5114],
+    "manual_aliases": {
+      "Elric, Edward": ["Edward", "Ed"],
+      "Elric, Alphonse": ["Alphonse", "Al"],
+      "Mustang, Roy": ["Roy Mustang", "Mustang"]
+    }
+  }
+}
