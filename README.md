@@ -1,17 +1,24 @@
-# Anime Turn Bot
+# Anime Games Bot
 
-Bot Discord léger de mini-jeu : chaque joueur doit citer à son tour un personnage
-différent de l’univers choisi. Les fautes légères sont tolérées.
+Bot Discord léger, auto-hébergeable sur Windows, avec économie persistante et deux jeux :
 
-➡️ Commence par **[GUIDE.md](GUIDE.md)**. Sous Windows, l’installation et le
-démarrage se font ensuite en double-cliquant sur les fichiers `.bat` fournis.
+- **Tour des personnages** : chacun cite un personnage différent avant la fin du chrono ;
+- **Undercover** : mots secrets proches, discussion, votes et imposteurs.
 
-## Commandes
+➡️ Consulte **[GUIDE.md](GUIDE.md)** pour l’installation, les réglages du Discord
+Developer Portal et toutes les commandes.
 
-- `/anime_creer` — crée une partie avec anime, vies et chrono configurables ;
-- `/anime_statut` — affiche les joueurs, vies et nombre de réponses utilisées ;
-- `/anime_stop` — arrête la partie (hôte ou modérateur) ;
-- `/anime_liste` — affiche tous les univers et la taille de leur catalogue.
+## Fonctions principales
 
-Le bot utilise un seul processus Python, aucune base de données et aucun serveur
-web. Le catalogue est un JSON local lu une fois au démarrage.
+- 13 univers et environ 4 680 personnages, dont **JoJo's Bizarre Adventure** ;
+- fautes de frappe légères, accents, noms français et surnoms acceptés ;
+- `/personnages` pour voir exactement les noms et alias reconnus ;
+- catalogue modifiable sur Discord par les membres autorisés ;
+- animes custom conservés après un redémarrage et utilisables comme les animes normaux ;
+- 120 paires Undercover par défaut : 60 générales et 60 anime ;
+- catégories et paires Undercover entièrement modifiables ;
+- monnaie, récompenses, `/solde` et `/classement` ;
+- un seul processus Python, `discord.py` et SQLite, sans serveur web.
+
+Les données personnelles du serveur (`.env`, économie et modifications custom) sont
+ignorées par Git et ne sont donc pas publiées accidentellement.

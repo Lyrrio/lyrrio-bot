@@ -3,25 +3,53 @@
     "label": "One Piece",
     "anime_ids": [21, 459, 460, 461, 464, 466, 504, 5252, 12859, 19123, 25161, 31490, 38234, 41592],
     "manual_aliases": {
-      "Monkey D., Luffy": ["Luffy", "Monkey D Luffy"],
-      "Roronoa, Zoro": ["Zoro"],
-      "Vinsmoke, Sanji": ["Sanji"],
-      "Nico, Robin": ["Robin"],
-      "Tony Tony, Chopper": ["Chopper"],
-      "Portgas D., Ace": ["Ace"],
-      "Trafalgar D. Water, Law": ["Law", "Trafalgar Law"]
+      "Luffy Monkey D": ["Luffy", "Monkey D Luffy", "Mugiwara", "Chapeau de paille", "Luffy au chapeau de paille"],
+      "Zoro Roronoa": ["Zoro", "Zorro", "Chasseur de pirates", "Roi des enfers"],
+      "Nami": ["Chatte voleuse", "Cat Burglar"],
+      "Usopp": ["Pipo", "Sogeking", "Sniper King", "God Usopp", "Dieu Usopp"],
+      "Sanji": ["Vinsmoke Sanji", "Jambe noire", "Black Leg", "Mr Prince"],
+      "Chopper Tony Tony": ["Chopper", "Amateur de barbe à papa", "Cotton Candy Lover"],
+      "Robin Nico": ["Robin", "Miss All Sunday", "Enfant du démon", "Demon Child"],
+      "Franky": ["Cutty Flam", "Cyborg Franky"],
+      "Brook": ["Soul King", "Fredonneur"],
+      "Jinbe": ["Jinbei", "Chevalier de la mer", "Knight of the Sea"],
+      "Ace Portgas D": ["Ace", "Ace aux poings ardents", "Fire Fist Ace", "Poing ardent"],
+      "Law Trafalgar": ["Law", "Trafalgar Law", "Chirurgien de la mort", "Surgeon of Death"],
+      "Linlin Charlotte": ["Big Mom", "Mama", "Charlotte Linlin"],
+      "Newgate Edward": ["Barbe Blanche", "Barbe blanche", "Whitebeard", "Edward Newgate"],
+      "Teach Marshall D": ["Barbe Noire", "Barbe noire", "Blackbeard", "Marshall D Teach"],
+      "Mihawk Dracule": ["Mihawk", "Œil de Faucon", "Oeil de Faucon", "Hawkeye"],
+      "Roger Gol D": ["Gol D Roger", "Gold Roger", "Roi des pirates", "Pirate King"],
+      "Shanks": ["Shanks le Roux", "Le Roux", "Red-Haired Shanks"],
+      "Kaidou": ["Kaido", "Kaido aux cent bêtes", "Roi des bêtes", "Strongest Creature"],
+      "Hancock Boa": ["Boa Hancock", "Impératrice pirate", "Pirate Empress"],
+      "Doflamingo Donquixote": ["Doflamingo", "Doffy", "Joker", "Démon céleste"],
+      "Crocodile": ["Sir Crocodile", "Mr 0", "Mr. 0"],
+      "Kuzan": ["Aokiji"],
+      "Borsalino": ["Kizaru"],
+      "Sakazuki": ["Akainu"],
+      "Isshou": ["Issho", "Fujitora"],
+      "Aramaki": ["Ryokugyu", "Ryokugyuu"],
+      "Buggy": ["Baggy", "Clown aux mille pièces", "Clown Star"]
     }
   },
   "naruto": {
     "label": "Naruto",
     "anime_ids": [20, 1735, 28755, 34566],
     "manual_aliases": {
-      "Uzumaki, Naruto": ["Naruto"],
-      "Uchiha, Sasuke": ["Sasuke"],
-      "Haruno, Sakura": ["Sakura"],
-      "Hatake, Kakashi": ["Kakashi"],
-      "Uchiha, Itachi": ["Itachi"],
-      "Gaara": ["Gaara du désert"]
+      "Naruto Uzumaki": ["Naruto", "Nanadaime", "Septième Hokage", "7e Hokage"],
+      "Sasuke Uchiha": ["Sasuke", "Dernier Uchiha"],
+      "Sakura Haruno": ["Sakura"],
+      "Kakashi Hatake": ["Kakashi", "Ninja copieur", "Sixième Hokage", "Rokudaime"],
+      "Itachi Uchiha": ["Itachi"],
+      "Gaara": ["Gaara du désert", "Cinquième Kazekage", "Godaime Kazekage"],
+      "Obito Uchiha": ["Obito", "Tobi", "Homme masqué"],
+      "Pain": ["Nagato", "Pein", "Chef de l Akatsuki"],
+      "Minato Namikaze": ["Minato", "Éclair jaune", "Eclair jaune", "Quatrième Hokage", "Yondaime"],
+      "Hiruzen Sarutobi": ["Hiruzen", "Troisième Hokage", "Sandaime", "Le Professeur"],
+      "Hashirama Senju": ["Hashirama", "Premier Hokage", "Shodai", "Dieu des shinobi"],
+      "Tobirama Senju": ["Tobirama", "Deuxième Hokage", "Nidaime"],
+      "Killer Bee": ["Killer B", "Bee", "Hachibi Jinchuriki"]
     }
   },
   "mushoku-tensei": {
@@ -29,10 +57,10 @@
     "dataset_queries": ["Mushoku Tensei"],
     "anime_ids": [39535, 45576, 51179, 55888],
     "manual_aliases": {
-      "Greyrat, Rudeus": ["Rudeus", "Rudy"],
-      "Greyrat, Eris Boreas": ["Eris"],
-      "Migurdia, Roxy": ["Roxy"],
-      "Sylphiette": ["Sylphy", "Fitz"]
+      "Rudeus Greyrat": ["Rudeus", "Rudy", "Quagmire", "Margeride"],
+      "Eris Boreas Greyrat": ["Eris", "Chien fou"],
+      "Roxy Migurdia": ["Roxy", "Déesse de la sagesse", "Deesse de la sagesse"],
+      "Sylphiette": ["Sylphy", "Fitz", "Silent Fitz", "Fitz le silencieux"]
     }
   },
   "my-hero-academia": {
@@ -40,11 +68,27 @@
     "dataset_queries": ["My Hero Academia"],
     "anime_ids": [31964, 33486, 36456, 38408, 41587, 49918, 54789],
     "manual_aliases": {
-      "Midoriya, Izuku": ["Deku", "Izuku", "Midoriya"],
-      "Bakugou, Katsuki": ["Bakugo", "Katsuki", "Kacchan"],
-      "Todoroki, Shouto": ["Shoto", "Todoroki"],
-      "Yagi, Toshinori": ["All Might"],
-      "Shigaraki, Tomura": ["Tomura", "Shigaraki"]
+      "Izuku Midoriya": ["Deku", "Izuku", "Midoriya"],
+      "Katsuki Bakugou": ["Bakugo", "Bakugou", "Katsuki", "Kacchan", "Dynamight", "Great Explosion Murder God Dynamight"],
+      "Shouto Todoroki": ["Shoto", "Shouto", "Todoroki"],
+      "All Might": ["Toshinori Yagi", "Symbole de la paix", "Symbol of Peace"],
+      "Tomura Shigaraki": ["Tomura", "Shigaraki", "Tenko Shimura"],
+      "Enji Todoroki": ["Endeavor", "Endeavour"],
+      "Keigo Takami": ["Hawks"],
+      "Dabi": ["Touya Todoroki", "Toya Todoroki"],
+      "Tsuyu Asui": ["Tsuyu", "Tsu", "Froppy"],
+      "Ochako Uraraka": ["Ochako", "Uraraka", "Uravity"],
+      "Tenya Iida": ["Tenya", "Iida", "Ingenium"],
+      "Eijirou Kirishima": ["Kirishima", "Red Riot"],
+      "Momo Yaoyorozu": ["Momo", "Creati"],
+      "Denki Kaminari": ["Denki", "Kaminari", "Chargebolt"],
+      "Kyouka Jirou": ["Kyoka Jiro", "Jiro", "Earphone Jack"],
+      "Fumikage Tokoyami": ["Tokoyami", "Tsukuyomi"],
+      "Mirio Toogata": ["Mirio", "Lemillion", "Le Million"],
+      "Tamaki Amajiki": ["Tamaki", "Suneater"],
+      "Shouta Aizawa": ["Aizawa", "Eraser Head"],
+      "Hizashi Yamada": ["Present Mic"],
+      "Chizome Akaguro": ["Stain", "Hero Killer", "Tueur de héros"]
     }
   },
   "demon-slayer": {
@@ -52,10 +96,14 @@
     "dataset_queries": ["Demon Slayer"],
     "anime_ids": [38000, 40456, 47778, 51019, 55701],
     "manual_aliases": {
-      "Kamado, Tanjirou": ["Tanjiro", "Tanjirou"],
-      "Kamado, Nezuko": ["Nezuko"],
-      "Agatsuma, Zenitsu": ["Zenitsu"],
-      "Hashibira, Inosuke": ["Inosuke"]
+      "Tanjirou Kamado": ["Tanjiro", "Tanjirou", "Tanjirô"],
+      "Nezuko Kamado": ["Nezuko"],
+      "Zenitsu Agatsuma": ["Zenitsu"],
+      "Inosuke Hashibira": ["Inosuke", "Roi de la montagne", "Mountain King"],
+      "Giyuu Tomioka": ["Giyu", "Giyuu", "Pilier de l eau", "Hashira de l eau"],
+      "Kyoujurou Rengoku": ["Kyojuro Rengoku", "Rengoku", "Pilier de la flamme", "Hashira de la flamme"],
+      "Shinobu Kochou": ["Shinobu Kocho", "Shinobu", "Pilier de l insecte"],
+      "Muzan Kibutsuji": ["Muzan", "Roi des démons", "Demon King"]
     }
   },
   "jujutsu-kaisen": {
@@ -63,61 +111,88 @@
     "dataset_queries": ["Jujutsu Kaisen"],
     "anime_ids": [40748, 48561, 51009],
     "manual_aliases": {
-      "Itadori, Yuuji": ["Yuji", "Yuuji", "Itadori"],
-      "Gojou, Satoru": ["Gojo", "Satoru"],
-      "Fushiguro, Megumi": ["Megumi"],
-      "Kugisaki, Nobara": ["Nobara"],
-      "Ryomen Sukuna": ["Sukuna"]
+      "Yuuji Itadori": ["Yuji", "Yuuji", "Itadori", "Réceptacle de Sukuna"],
+      "Satoru Gojou": ["Gojo", "Gojou", "Satoru", "Le plus fort", "Six Eyes", "Six yeux"],
+      "Megumi Fushiguro": ["Megumi", "Fushiguro"],
+      "Nobara Kugisaki": ["Nobara", "Kugisaki"],
+      "Sukuna Ryoumen": ["Sukuna", "Ryomen Sukuna", "Ryoumen Sukuna", "Roi des fléaux", "King of Curses"],
+      "Yuuta Okkotsu": ["Yuta Okkotsu", "Yuta", "Yuuta"],
+      "Suguru Getou": ["Suguru Geto", "Geto", "Getou"],
+      "Touji Fushiguro": ["Toji Fushiguro", "Toji", "Touji", "Tueur d exorciseurs", "Sorcerer Killer"]
     }
   },
   "attack-on-titan": {
     "label": "L'Attaque des Titans",
     "anime_ids": [16498, 25777, 35760, 38524, 40028, 48583, 51535],
     "manual_aliases": {
-      "Yeager, Eren": ["Eren", "Eren Jaeger", "Eren Jäger"],
-      "Ackerman, Mikasa": ["Mikasa"],
-      "Arlert, Armin": ["Armin"],
-      "Levi": ["Livai", "Livaï", "Levi Ackerman"]
+      "Eren Yeager": ["Eren", "Eren Jaeger", "Eren Jäger", "Titan assaillant", "Titan originel"],
+      "Mikasa Ackerman": ["Mikasa"],
+      "Armin Arlert": ["Armin", "Titan colossal"],
+      "Levi": ["Livai", "Livaï", "Levi Ackerman", "Caporal-chef", "Soldat le plus fort de l humanité"],
+      "Reiner Braun": ["Reiner", "Titan cuirassé", "Titan cuirasse", "Armored Titan"],
+      "Bertholdt Hoover": ["Bertolt", "Berthold", "Titan colossal"],
+      "Annie Leonhart": ["Annie", "Titan féminin", "Titan feminin", "Female Titan"],
+      "Zeke": ["Zeke Yeager", "Sieg Jäger", "Sieg Jaeger", "Titan bestial", "Beast Titan"],
+      "Krista Lenz": ["Historia", "Historia Reiss", "Christa Lenz", "Krista Lenz"]
     }
   },
   "dragon-ball": {
     "label": "Dragon Ball",
-    "anime_ids": [223, 813, 225, 30694, 48916],
+    "anime_ids": [223, 813, 225, 30694, 36946, 48916],
     "manual_aliases": {
-      "Son, Gokuu": ["Goku", "Son Goku"],
-      "Vegeta": ["Vegeta"],
-      "Piccolo": ["Piccolo"],
-      "Son, Gohan": ["Gohan"]
+      "Gokuu Son": ["Goku", "Son Goku", "Sangoku", "Kakarot", "Kakarotto"],
+      "Vegeta": ["Végéta", "Prince des Saiyans", "Prince of all Saiyans"],
+      "Piccolo": ["Petit Cœur", "Petit Coeur", "Satan Petit Cœur", "Ma Junior"],
+      "Gohan Son": ["Gohan", "Sangohan", "Great Saiyaman", "Guerrier intergalactique"],
+      "Muten-Roushi": ["Tortue Géniale", "Tortue Geniale", "Maître Roshi", "Maitre Roshi", "Kame Sennin", "Muten Roshi"],
+      "Freeza": ["Freezer", "Frieza"],
+      "Majin Buu": ["Buu", "Boo", "Bou", "Majin Boo"],
+      "Jinzouningen 17-gou": ["C-17", "C17", "Android 17"],
+      "Jinzouningen 18-gou": ["C-18", "C18", "Android 18"],
+      "Tenshinhan": ["Tenshinhan", "Tien Shinhan", "Tien"],
+      "Kuririn": ["Krilin", "Krillin"],
+      "Trunks": ["Trunks du futur", "Future Trunks"],
+      "Broly": ["Broly", "Super Saiyan légendaire", "Legendary Super Saiyan"]
     }
   },
   "bleach": {
     "label": "Bleach",
     "anime_ids": [269, 41467, 53998],
     "manual_aliases": {
-      "Kurosaki, Ichigo": ["Ichigo"],
-      "Kuchiki, Rukia": ["Rukia"],
-      "Abarai, Renji": ["Renji"],
-      "Inoue, Orihime": ["Orihime"]
+      "Ichigo Kurosaki": ["Ichigo", "Shinigami remplaçant", "Substitute Shinigami"],
+      "Rukia Kuchiki": ["Rukia"],
+      "Renji Abarai": ["Renji"],
+      "Orihime Inoue": ["Orihime"],
+      "Sousuke Aizen": ["Sosuke Aizen", "Aizen"],
+      "Kisuke Urahara": ["Urahara", "Marchand au bob rayé"],
+      "Byakuya Kuchiki": ["Byakuya"],
+      "Kenpachi Zaraki": ["Kenpachi", "Zaraki"],
+      "Yoruichi Shihouin": ["Yoruichi", "Déesse de l éclair", "Flash Goddess"]
     }
   },
   "hunter-x-hunter": {
     "label": "Hunter x Hunter",
     "anime_ids": [11061],
     "manual_aliases": {
-      "Freecss, Gon": ["Gon"],
-      "Zoldyck, Killua": ["Killua"],
+      "Gon Freecss": ["Gon"],
+      "Killua Zoldyck": ["Killua", "Kirua", "Kilua"],
       "Kurapika": ["Kurapika"],
       "Leorio Paladiknight": ["Leorio"],
-      "Hisoka Morow": ["Hisoka"]
+      "Hisoka Morow": ["Hisoka"],
+      "Chrollo Lucilfer": ["Chrollo", "Kuroro Lucifer", "Kuroro", "Chef de la Brigade Fantôme"],
+      "Meruem": ["Meruem", "Roi des fourmis", "Chimera Ant King"],
+      "Isaac Netero": ["Netero", "Président Netero"]
     }
   },
   "death-note": {
     "label": "Death Note",
     "anime_ids": [1535],
     "manual_aliases": {
-      "Yagami, Light": ["Light", "Kira"],
-      "L Lawliet": ["L", "Ryuzaki"],
-      "Amane, Misa": ["Misa"],
+      "Light Yagami": ["Light", "Kira", "Dieu du nouveau monde"],
+      "L Lawliet": ["L", "Ryuzaki", "Ryûzaki", "Eraldo Coil", "Deneuve"],
+      "Misa Amane": ["Misa", "Misa Misa", "Deuxième Kira", "Second Kira"],
+      "Nate River": ["Near", "N"],
+      "Mihael Keehl": ["Mello"],
       "Ryuk": ["Ryuk"]
     }
   },
@@ -125,9 +200,48 @@
     "label": "Fullmetal Alchemist",
     "anime_ids": [121, 5114],
     "manual_aliases": {
-      "Elric, Edward": ["Edward", "Ed"],
-      "Elric, Alphonse": ["Alphonse", "Al"],
-      "Mustang, Roy": ["Roy Mustang", "Mustang"]
+      "Edward Elric": ["Edward", "Ed", "Fullmetal Alchemist", "Alchimiste Fullmetal", "Alchimiste d acier"],
+      "Alphonse Elric": ["Alphonse", "Al", "Alphonse en armure"],
+      "Roy Mustang": ["Mustang", "Flame Alchemist", "Alchimiste de flammes"],
+      "Riza Hawkeye": ["Riza", "Hawkeye", "Œil de faucon", "Oeil de faucon"],
+      "King Bradley": ["Bradley", "Wrath", "Führer", "Fuhrer"],
+      "Van Hohenheim": ["Hohenheim", "Hohenheim de la lumière"],
+      "Scar": ["Scar", "Balafré", "Tueur d alchimistes d État"]
+    }
+  },
+  "jojo": {
+    "label": "JoJo's Bizarre Adventure",
+    "anime_ids": [14719, 20899, 26055, 31933, 37991, 48661, 51367, 53273],
+    "manual_aliases": {
+      "Jonathan Joestar": ["Jonathan", "JoJo", "Premier JoJo"],
+      "Joseph Joestar": ["Joseph", "JoJo", "Vieux Joseph", "Old Joseph"],
+      "Joutarou Kuujou": ["Jotaro Kujo", "Jotaro", "Joutarou", "JoJo", "Star Platinum"],
+      "Jousuke Higashikata": ["Josuke Higashikata", "Josuke", "JoJo", "Crazy Diamond"],
+      "Giorno Giovanna": ["Giorno", "GioGio", "Golden Experience", "Gold Experience"],
+      "Jolyne Kuujou": ["Jolyne Cujoh", "Jolyne", "JoJo", "Stone Free"],
+      "Dio Brando": ["Dio", "DIO", "Le Monde", "The World"],
+      "Robert E. O. Speedwagon": ["Speedwagon", "Robert Speedwagon"],
+      "Caesar Anthonio Zeppeli": ["Caesar Zeppeli", "César Zeppeli", "Caesar"],
+      "Lisa Lisa": ["Elizabeth Joestar", "Lisa Lisa"],
+      "Jean Pierre Polnareff": ["Polnareff", "Jean-Pierre Polnareff", "Silver Chariot"],
+      "Muhammad Avdol": ["Avdol", "Abdul", "Magician's Red"],
+      "Noriaki Kakyoin": ["Kakyoin", "Hierophant Green"],
+      "Iggy": ["Iggy", "The Fool"],
+      "Kira Yoshikage": ["Yoshikage Kira", "Kira", "Killer Queen"],
+      "Kouichi Hirose": ["Koichi Hirose", "Koichi", "Echoes"],
+      "Okuyasu Nijimura": ["Okuyasu", "The Hand"],
+      "Rohan Kishibe": ["Rohan", "Heaven's Door"],
+      "Bruno Bucciarati": ["Bucciarati", "Bruno", "Sticky Fingers", "Zipper Man"],
+      "Guido Mista": ["Mista", "Sex Pistols", "Six Bullets"],
+      "Narancia Ghirga": ["Narancia", "Aerosmith", "Lil Bomber"],
+      "Leone Abbacchio": ["Abbacchio", "Moody Blues", "Moody Jazz"],
+      "Pannacotta Fugo": ["Fugo", "Purple Haze", "Purple Smoke"],
+      "Trish Una": ["Trish", "Spice Girl"],
+      "Diavolo": ["Diavolo", "Boss", "King Crimson"],
+      "Enrico Pucci": ["Pucci", "Père Pucci", "Father Pucci", "Whitesnake", "Made in Heaven"],
+      "Ermes Costello": ["Ermes", "Hermès", "Kiss", "Smack"],
+      "Foo Fighters": ["F.F.", "FF", "Foo Fighters"],
+      "Weather Report": ["Weather", "Wes Bluemarine", "Weather Report"]
     }
   }
 }

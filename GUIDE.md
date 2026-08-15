@@ -1,115 +1,173 @@
-# Installation complète sur Windows
+# Guide complet — Anime Games Bot
 
-## 1. Créer l’application Discord
+## 1. Discord Developer Portal
 
-1. Ouvre le [Discord Developer Portal](https://discord.com/developers/applications),
-   connecte-toi, clique **New Application**, donne un nom au bot puis confirme.
-2. Dans **Bot**, choisis éventuellement son pseudo et son avatar.
-3. Toujours dans **Bot**, sous **Privileged Gateway Intents**, active uniquement
-   **Message Content Intent**, puis sauvegarde. Le jeu en a besoin pour lire le nom
-   écrit pendant le tour. `Presence Intent` et `Server Members Intent` sont inutiles.
-4. Dans **Bot > Token**, clique **Reset Token**, confirme, puis **Copy**. Garde ce
-   token secret : il donne le contrôle du bot. Ne le poste jamais dans Discord.
+1. Ouvre le [Discord Developer Portal](https://discord.com/developers/applications).
+2. Clique sur **New Application**, choisis un nom puis ouvre l’onglet **Bot**.
+3. Dans **Privileged Gateway Intents**, active seulement **Message Content Intent**.
+   Le jeu de personnages en a besoin pour lire les réponses écrites.
+4. Dans **Bot > Token**, clique sur **Reset Token**, puis **Copy**. Ne montre jamais
+   ce token : il donne le contrôle total du bot.
+5. Dans **Installation**, garde **Guild Install** et **Discord Provided Link**.
+6. Ajoute les scopes `applications.commands` et `bot`.
+7. Accorde uniquement **View Channels**, **Send Messages**, **Embed Links** et
+   **Read Message History**.
+8. Copie l’Install Link et ouvre-le pour inviter le bot. Il faut la permission
+   **Gérer le serveur** sur Discord pour réaliser cette étape.
 
-## 2. Autoriser et inviter le bot
+Aucune Interactions Endpoint URL n’est nécessaire : le programme se connecte depuis
+ton PC.
 
-Dans **Installation** :
+## 2. Installation sur le PC
 
-1. garde **Guild Install** comme contexte d’installation ;
-2. choisis **Discord Provided Link** comme type de lien ;
-3. dans **Default Install Settings > Guild Install**, ajoute les scopes
-   `applications.commands` et `bot` ;
-4. pour les permissions du bot, coche seulement **View Channels**, **Send Messages**,
-   **Embed Links** et **Read Message History** ;
-5. sauvegarde, copie l’**Install Link**, ouvre-le et ajoute le bot à ton serveur.
+1. Installe Python 3.12 ou 3.13 depuis
+   [python.org](https://www.python.org/downloads/windows/).
+2. Double-clique sur `installer.bat`.
+3. Ouvre le fichier `.env` créé par l’installateur.
+4. Colle le token après `DISCORD_TOKEN=`.
 
-Il faut avoir la permission **Gérer le serveur** pour l’ajouter. Aucun
-**Interactions Endpoint URL** n’est nécessaire : ce bot se connecte directement à
-Discord depuis ton PC.
-
-## 3. Installer Python et le bot
-
-1. Installe [Python](https://www.python.org/downloads/windows/) 3.12 ou 3.13.
-   Pendant l’installation, autorise l’ajout de Python au `PATH` si l’option apparaît.
-2. Double-clique sur `installer.bat`. Il crée un environnement isolé `.venv` et
-   installe seulement `discord.py`.
-3. Ouvre le fichier `.env` créé dans ce dossier avec le Bloc-notes.
-4. Remplace la valeur après `DISCORD_TOKEN=` par le token copié, sans espaces ni
-   guillemets, puis enregistre.
-
-Exemple de forme (ceci n’est pas un vrai token) :
+Exemple de forme — ce n’est pas un vrai token :
 
 ```text
 DISCORD_TOKEN=abc123.exemple.secret
+WIN_REWARD=100
+TEST_GUILD_ID=
 ```
 
-### Commandes visibles immédiatement sur le serveur de test (optionnel)
+Pour faire apparaître les commandes immédiatement sur un serveur de test, active le
+mode développeur de Discord, copie l’identifiant du serveur et colle-le après
+`TEST_GUILD_ID=`. Sans cela, les commandes globales peuvent mettre un peu de temps à
+se synchroniser après une mise à jour.
 
-Les commandes globales peuvent parfois mettre un moment à apparaître. Pour une
-synchronisation immédiate sur ton serveur :
+## 3. Allumer, mettre à jour et éteindre
 
-1. dans Discord, ouvre **Paramètres utilisateur > Avancés** et active le
-   **Mode développeur** ;
-2. clic droit sur l’icône de ton serveur, puis **Copier l’identifiant du serveur** ;
-3. colle ce nombre après `TEST_GUILD_ID=` dans `.env`.
+- **Allumer :** double-clique sur `demarrer.bat` et laisse la fenêtre ouverte.
+- **Éteindre :** clique dans la fenêtre puis appuie sur `Ctrl+C`.
+- **Après une modification du code :** arrête puis relance simplement `demarrer.bat`.
+- **Mettre à jour les personnages en ligne :** arrête le bot puis lance
+  `mettre-a-jour-personnages.bat`.
 
-Quand le bot sera utilisé sur plusieurs serveurs, vide cette valeur pour repasser
-aux commandes globales, puis redémarre-le.
+Ne lance jamais deux fenêtres avec le même token. Si le PC s’éteint, redémarre ou se
+met en veille, le bot passe hors ligne jusqu’au prochain lancement.
 
-## 4. Allumer et éteindre
+## 4. Jeu du tour des personnages
 
-- **Allumer :** double-clique sur `demarrer.bat`. Garde la fenêtre ouverte. Quand
-  le journal affiche `Connecté en tant que ...`, le bot est en ligne.
-- **Éteindre proprement :** clique dans cette fenêtre, appuie sur `Ctrl+C`, puis
-  confirme avec `O` si Windows le demande. Fermer la fenêtre arrête aussi le bot.
-- Si le PC s’éteint, redémarre ou se met en veille, le bot passe hors ligne. Il
-  suffit de relancer `demarrer.bat` au retour.
+### Commandes de jeu
 
-Ne lance pas deux fenêtres `demarrer.bat` en même temps avec le même token.
+- `/anime_creer anime vies chrono` : crée la salle d’attente ;
+- `/anime_statut` : affiche joueurs, vies, tour et chrono ;
+- `/anime_stop` : arrête la partie, pour l’hôte ou un modérateur ;
+- `/anime_liste` : affiche tous les univers disponibles ;
+- `/personnages anime recherche page` : affiche les personnages et alias reconnus.
 
-## 5. Jouer
+L’hôte est automatiquement inscrit. À partir de deux joueurs, il peut démarrer. Un
+nom valide passe au joueur suivant. Un doublon, un personnage inconnu ou un chrono
+dépassé retire une vie. Le dernier survivant gagne des pièces.
 
-1. Dans un salon textuel, lance `/anime_creer`.
-2. Choisis un univers dans les suggestions. `vies` (défaut 3, de 1 à 10) et
-   `chrono` (défaut 20 secondes, de 5 à 120) sont optionnels.
-3. Les joueurs cliquent **Rejoindre**. L’hôte est inscrit automatiquement.
-4. À partir de 2 joueurs, l’hôte clique **Démarrer**.
-5. Le joueur mentionné écrit un nom dans le salon. Un personnage valide passe le
-   tour. Un doublon, un nom inconnu ou un délai dépassé retire une vie. À zéro vie,
-   le joueur est éliminé; le dernier gagne.
+La comparaison ignore la casse, les accents, la ponctuation et tolère une petite
+faute. Des alias tels que `Big Mom`, `Barbe Blanche`, `Pipo`, `Kirua`, `Deku`,
+`Jotaro`, `The World` ou `Tortue Géniale` sont acceptés.
 
-Il n’y a pas de maximum codé : la limite pratique est simplement le nombre de
-membres présents sur Discord.
-
-## Tolérance des noms et catalogue
-
-La comparaison ignore les majuscules, accents, espaces et ponctuation. Elle accepte
-aussi l’ordre prénom/nom, les alias courants configurés et une petite faute de
-frappe. Une réponse courte ou ambiguë n’est volontairement pas devinée.
-
-Le cache livré contient **4 461 fiches** issues des pages de personnages des entrées
-anime configurées : One Piece, Naruto, Mushoku Tensei, My Hero Academia, Demon
+Le catalogue contient One Piece, Naruto, Mushoku Tensei, My Hero Academia, Demon
 Slayer, Jujutsu Kaisen, L’Attaque des Titans, Dragon Ball, Bleach, Hunter x Hunter,
-Death Note et Fullmetal Alchemist.
+Death Note, Fullmetal Alchemist et JoJo's Bizarre Adventure.
 
-« Tous les personnages » signifie ici tous ceux répertoriés sur ces pages au moment
-de la génération. Un personnage uniquement présent dans le manga, tout juste ajouté
-ou absent de la source peut manquer. Pour actualiser le cache, arrête le bot puis
-double-clique sur `mettre-a-jour-personnages.bat`; l’opération nécessite Internet et
-peut prendre quelques minutes.
+## 5. Corriger et personnaliser le catalogue
 
-Pour ajouter un anime, ajoute dans `anime_config.json` une entrée avec son libellé et
-les identifiants MyAnimeList de ses saisons, puis relance la mise à jour.
+Ces commandes demandent la permission Discord **Gérer le serveur** :
 
-## Dépannage rapide
+- `/catalogue anime_ajouter nom identifiant` ;
+- `/catalogue anime_renommer anime nouveau_nom` ;
+- `/catalogue anime_supprimer anime confirmer` ;
+- `/catalogue personnage_ajouter anime nom alias` ;
+- `/catalogue personnage_renommer anime personnage nouveau_nom` ;
+- `/catalogue personnage_supprimer anime personnage confirmer` ;
+- `/catalogue alias_ajouter anime personnage surnom`.
 
-- **Le bot est hors ligne :** `demarrer.bat` doit rester ouvert et le token doit être
-  correct. Un token régénéré rend l’ancien invalide.
-- **Il ne lit pas les réponses :** vérifie **Message Content Intent** dans l’onglet
-  **Bot** du Developer Portal, puis redémarre.
-- **Les commandes `/anime_...` n’apparaissent pas :** réinvite le bot avec le scope
-  `applications.commands`, ou utilise temporairement `TEST_GUILD_ID`.
-- **`Missing Access` / `Forbidden` :** donne au bot accès au salon et les quatre
-  permissions indiquées plus haut.
-- **Un personnage manque :** ajoute un alias dans `manual_aliases` de
-  `anime_config.json`, ou actualise le catalogue.
+Dans `personnage_ajouter`, plusieurs alias peuvent être séparés avec `;` :
+
+```text
+alias: Surnom français; Nom de héros; Autre orthographe
+```
+
+Un anime ajouté manuellement porte la mention **custom**, apparaît dans les mêmes
+suggestions que les animes fournis et fonctionne avec le même moteur de tolérance.
+Les changements sont sauvegardés dans `data/catalog_edits.json` et résistent aux
+redémarrages ainsi qu’aux mises à jour du catalogue téléchargé.
+
+Utilise d’abord `/personnages anime recherche` quand une réponse est refusée. Tu
+pourras vérifier le nom officiel puis ajouter immédiatement l’orthographe manquante
+avec `/catalogue alias_ajouter`.
+
+## 6. Undercover
+
+### Jouer
+
+1. Lance `/undercover_creer categorie discussion imposteurs`.
+2. Les joueurs rejoignent avec le bouton. Minimum : 3 joueurs.
+3. L’hôte démarre.
+4. Chaque joueur clique sur **Voir mon mot**. Le message est éphémère et privé.
+5. Discutez sans prononcer le mot exact.
+6. Votez avec `/undercover_vote membre`.
+7. Lorsque tous les survivants ont voté, la personne majoritaire est éliminée.
+
+Le bot choisit aléatoirement lequel des deux mots est celui des Undercover : le
+premier mot d’une paire n’est donc pas toujours le mot civil. En cas d’égalité, une
+nouvelle discussion commence. Les civils gagnent quand tous les Undercover sont
+éliminés. Les Undercover gagnent lorsqu’ils sont au moins aussi nombreux que les
+civils survivants.
+
+Commandes utiles :
+
+- `/undercover_statut` : survivants, joueurs ayant regardé leur mot et chrono ;
+- `/undercover_vote membre` : vote privé, modifiable jusqu’au dernier vote ;
+- `/undercover_stop` : arrête la partie ;
+- `/undercover_paires categorie recherche page` : affiche les mots disponibles.
+
+Deux catégories sont fournies : **Général** et **Anime**, avec 60 paires chacune.
+
+### Modifier les mots
+
+Ces commandes demandent également **Gérer le serveur** :
+
+- `/undercover_mots categorie_ajouter nom identifiant` ;
+- `/undercover_mots categorie_renommer categorie nouveau_nom` ;
+- `/undercover_mots categorie_supprimer categorie confirmer` ;
+- `/undercover_mots paire_ajouter categorie mot_1 mot_2` ;
+- `/undercover_mots paire_modifier categorie paire_id mot_1 mot_2` ;
+- `/undercover_mots paire_supprimer categorie paire_id confirmer`.
+
+Les identifiants `#...` sont visibles avec `/undercover_paires` et proposés dans les
+suggestions des commandes de modification. Les changements sont conservés dans
+`data/undercover_edits.json`.
+
+## 7. Économie et sauvegardes
+
+- `/solde` affiche tes pièces et victoires ;
+- `/solde membre` consulte un autre joueur ;
+- `/classement` affiche les dix joueurs les plus riches.
+
+Le vainqueur du tour des personnages reçoit `WIN_REWARD` pièces. Dans Undercover,
+chaque membre du camp gagnant reçoit cette récompense. La valeur par défaut est 100.
+
+À sauvegarder si tu changes de PC :
+
+- `.env` pour la configuration secrète ;
+- `data/economy.db` pour les portefeuilles ;
+- `data/catalog_edits.json` pour les animes et alias custom ;
+- `data/undercover_edits.json` pour les mots custom.
+
+Ces fichiers sont ignorés par Git afin de ne pas publier le token ni les données de
+ton serveur.
+
+## 8. Dépannage
+
+- **Bot hors ligne :** vérifie le token et garde `demarrer.bat` ouvert.
+- **Réponses non lues :** active Message Content Intent puis redémarre.
+- **Commandes absentes :** vérifie le scope `applications.commands`, renseigne
+  temporairement `TEST_GUILD_ID`, puis redémarre.
+- **Missing Access / Forbidden :** donne au bot les permissions indiquées plus haut.
+- **Personnage refusé :** cherche-le avec `/personnages`, puis ajoute son orthographe
+  avec `/catalogue alias_ajouter`.
+- **Mot privé inaccessible :** seul un joueur inscrit dans la partie active peut
+  utiliser le bouton **Voir mon mot**.
