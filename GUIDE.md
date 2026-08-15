@@ -41,6 +41,7 @@ Exemple de forme (ceci n’est pas un vrai token) :
 
 ```text
 DISCORD_TOKEN=abc123.exemple.secret
+WIN_REWARD=100
 ```
 
 ### Commandes visibles immédiatement sur le serveur de test (optionnel)
@@ -78,16 +79,27 @@ Ne lance pas deux fenêtres `demarrer.bat` en même temps avec le même token.
    tour. Un doublon, un nom inconnu ou un délai dépassé retire une vie. À zéro vie,
    le joueur est éliminé; le dernier gagne.
 
+Le message de chaque tour indique son heure de fin. Le bouton **Voir le chrono**
+affiche le nombre exact de secondes restantes et `/anime_statut` permet aussi de le
+consulter. Le vainqueur reçoit **100 pièces** par défaut. Utilise `/solde` pour voir
+un portefeuille et `/classement` pour le top 10. La valeur peut être changée avec
+`WIN_REWARD` dans `.env`.
+
+Les portefeuilles sont conservés dans `data/economy.db`, même après un redémarrage.
+Garde une copie de ce fichier si tu veux sauvegarder l’économie du serveur.
+
 Il n’y a pas de maximum codé : la limite pratique est simplement le nombre de
 membres présents sur Discord.
 
 ## Tolérance des noms et catalogue
 
 La comparaison ignore les majuscules, accents, espaces et ponctuation. Elle accepte
-aussi l’ordre prénom/nom, les alias courants configurés et une petite faute de
-frappe. Une réponse courte ou ambiguë n’est volontairement pas devinée.
+aussi l’ordre prénom/nom, les alias français, noms de héros, surnoms et « also known
+as » configurés, ainsi qu’une petite faute de frappe. Par exemple `Big Mom`, `Pipo`,
+`Barbe Blanche`, `Œil de Faucon`, `Froppy`, `Kirua` et `Tortue Géniale` sont reconnus.
+Une réponse courte ou ambiguë n’est volontairement pas devinée.
 
-Le cache livré contient **4 461 fiches** issues des pages de personnages des entrées
+Le cache livré contient **4 470 fiches** issues des pages de personnages des entrées
 anime configurées : One Piece, Naruto, Mushoku Tensei, My Hero Academia, Demon
 Slayer, Jujutsu Kaisen, L’Attaque des Titans, Dragon Ball, Bleach, Hunter x Hunter,
 Death Note et Fullmetal Alchemist.

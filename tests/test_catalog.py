@@ -7,7 +7,8 @@ from catalog import AnimeCatalog
 class CatalogTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.catalog = AnimeCatalog(Path(__file__).resolve().parents[1] / "data" / "catalog.json")
+        root = Path(__file__).resolve().parents[1]
+        cls.catalog = AnimeCatalog(root / "data" / "catalog.json", root / "anime_config.json")
 
     def test_every_anime_has_characters(self):
         for slug, _ in self.catalog.choices():
@@ -23,6 +24,14 @@ class CatalogTests(unittest.TestCase):
             ("demon-slayer", "Tanjiroo", "Tanjirou"),
             ("jujutsu-kaisen", "Gojo", "Gojou"),
             ("death-note", "Kira", "Light"),
+            ("one-piece", "Big Mom", "Linlin"),
+            ("one-piece", "Barbe Blanche", "Newgate"),
+            ("one-piece", "Pipo", "Usopp"),
+            ("naruto", "Éclair jaune", "Minato"),
+            ("my-hero-academia", "Froppy", "Tsuyu"),
+            ("dragon-ball", "Tortue Géniale", "Muten"),
+            ("hunter-x-hunter", "Kirua", "Killua"),
+            ("death-note", "Deuxième Kira", "Misa"),
         ]
         for slug, answer, expected in cases:
             with self.subTest(slug=slug, answer=answer):

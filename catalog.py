@@ -21,7 +21,7 @@ class Character:
 
 
 class AnimeCatalog:
-    def __init__(self, path: Path):
+    def __init__(self, path: Path, config_path: Path | None = None):
         payload = json.loads(path.read_text(encoding="utf-8"))
         self.generated_at = payload.get("generated_at", "inconnue")
         self._anime = payload["anime"]
@@ -39,6 +39,8 @@ class AnimeCatalog:
                         continue
                     index[key] = character if previous in (None, character) else None
             self._indexes[slug] = index
+        if config_path and config_path.exists():
+            self._apply_manual_aliases(config_path)
 
     def choices(self) -> list[tuple[str, str]]:
         return [(slug, data["label"]) for slug, data in self._anime.items()]
@@ -50,8 +52,30 @@ class AnimeCatalog:
         return len(self._anime[slug]["characters"])
 
     def resolve(self, slug: str, answer: str) -> Character | None:
+        return self._resolve_index(self._indexes[slug], answer)
+
+    def _apply_manual_aliases(self, config_path: Path) -> None:
+        config = json.loads(config_path.read_text(encoding="utf-8"))
+        for slug, settings in config.items():
+            index = self._indexes.get(slug)
+            if index is None:
+                continue
+            for canonical, aliases in settings.get("manual_aliases", {}).items():
+                character = self._resolve_index(index, canonical)
+                if character is None:
+                    continue
+                for alias in aliases:
+                    key = normalize(alias)
+                    if not key:
+                        continue
+                    previous = index.get(key)
+                    if previous is None and key in index:
+                        continue
+                    index[key] = character if previous in (None, character) else None
+
+    @staticmethod
+    def _resolve_index(index: dict[str, Character | None], answer: str) -> Character | None:
         query = normalize(answer)
-        index = self._indexes[slug]
         if query in index:
             return index[query]
         if len(query) < 4:
